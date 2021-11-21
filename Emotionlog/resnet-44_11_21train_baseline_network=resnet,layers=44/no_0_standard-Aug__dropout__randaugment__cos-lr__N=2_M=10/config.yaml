@@ -14,7 +14,7 @@ cos_lr: true
 dataset: emotiondataset
 droprate: 0.3
 en_wandb: true
-exp_id: 00016_network=resnet,layers=44
+exp_id: 00025_network=resnet,layers=44
 growth_rate: 12
 initial_learning_rate: 0.1
 layers: 44

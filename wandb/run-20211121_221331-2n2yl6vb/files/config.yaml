@@ -1,0 +1,110 @@
+wandb_version: 1
+
+M:
+  desc: null
+  value: 10
+N:
+  desc: null
+  value: 2
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.7
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    m:
+    - 1: eval_top1
+      6:
+      - 3
+      7:
+      - 2
+    - 1: epoch_time
+      6:
+      - 2
+      - 3
+    python_version: 3.9.5
+    start_time: 1637504011
+    t:
+      1:
+      - 1
+      2:
+      - 1
+      3:
+      - 7
+      - 13
+      4: 3.9.5
+      5: 0.12.7
+      8:
+      - 5
+alpha:
+  desc: null
+  value: 200
+augment:
+  desc: null
+  value: true
+bn_size:
+  desc: null
+  value: 4
+cardinality:
+  desc: null
+  value: 8
+changing_lr:
+  desc: null
+  value:
+  - 80
+  - 120
+checkpoint:
+  desc: null
+  value: checkpoint
+commit:
+  desc: null
+  value: not_set
+compression_rate:
+  desc: null
+  value: 0.5
+cos_lr:
+  desc: null
+  value: true
+dataset:
+  desc: null
+  value: emotiondataset
+droprate:
+  desc: null
+  value: 0.3
+en_wandb:
+  desc: null
+  value: true
+exp_id:
+  desc: null
+  value: 00019_network=resnet,layers=44
+growth_rate:
+  desc: null
+  value: 12
+initial_learning_rate:
+  desc: null
+  value: 0.1
+layers:
+  desc: null
+  value: 44
+model:
+  desc: null
+  value: resnet
+name:
+  desc: null
+  value: 11_21train_baseline_network=resnet,layers=44
+'no':
+  desc: null
+  value: '0'
+print_freq:
+  desc: null
+  value: 10
+randaugment:
+  desc: null
+  value: true
+resume:
+  desc: null
+  value: false
+warm_up:
+  desc: null
+  value: false

@@ -59,7 +59,7 @@ class CifarResNeXt(nn.Module):
     self.base_width = base_width
     self.num_classes = num_classes
 
-    self.conv_1_3x3 = nn.Conv2d(3, 64, 3, 1, 1, bias=False)
+    self.conv_1_3x3 = nn.Conv2d(1, 64, 3, 1, 1, bias=False)
     self.bn_1 = nn.BatchNorm2d(64)
 
     self.inplanes = 64

@@ -88,7 +88,7 @@ class DenseNet(nn.Module):
         efficient (bool) - set to True to use checkpointing. Much more memory efficient, but slower.
     """
     def __init__(self, growth_rate=12, block_config=(16, 16, 16), compression=0.5,
-                 num_init_features=24, bn_size=4, drop_rate=0,
+                num_init_features=24, bn_size=4, drop_rate=0,
                 small_inputs=True, efficient=False):
 
         super(DenseNet, self).__init__()
@@ -98,16 +98,16 @@ class DenseNet(nn.Module):
         # First convolution
         if small_inputs:
             self.features = nn.Sequential(OrderedDict([
-                ('conv0', nn.Conv2d(3, num_init_features, kernel_size=3, stride=1, padding=1, bias=False)),
+                ('conv0', nn.Conv2d(1, num_init_features, kernel_size=3, stride=1, padding=1, bias=False)),
             ]))
         else:
             self.features = nn.Sequential(OrderedDict([
-                ('conv0', nn.Conv2d(3, num_init_features, kernel_size=7, stride=2, padding=3, bias=False)),
+                ('conv0', nn.Conv2d(1, num_init_features, kernel_size=7, stride=2, padding=3, bias=False)),
             ]))
             self.features.add_module('norm0', nn.BatchNorm2d(num_init_features))
             self.features.add_module('relu0', nn.ReLU(inplace=True))
             self.features.add_module('pool0', nn.MaxPool2d(kernel_size=3, stride=2, padding=1,
-                                                           ceil_mode=False))
+                                                        ceil_mode=False))
 
         # Each denseblock
         num_features = num_init_features

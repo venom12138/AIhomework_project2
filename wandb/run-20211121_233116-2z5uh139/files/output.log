@@ -1,0 +1,84 @@
+
+Randaugment!
+Number of final features: 64
+Number of model parameters: 466711
+Traceback (most recent call last):
+  File "/home/yu-jw19/venom/project2/train.py", line 578, in <module>
+    main()
+  File "/home/yu-jw19/venom/project2/train.py", line 405, in main
+    train_metrics = train(train_loader, model, ce_criterion, optimizer, epoch)
+  File "/home/yu-jw19/venom/project2/train.py", line 439, in train
+    for i, (x, target) in enumerate(train_loader):
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/_utils.py", line 425, in reraise
+    raise self.exc_type(msg)
+OSError: Caught OSError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/yu-jw19/venom/project2/dataset.py", line 36, in __getitem__
+    img = self.transform(img)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torchvision/transforms/transforms.py", line 60, in __call__
+    img = t(img)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 710, in __call__
+    img = op.pil_transformer(1., self.m)(img)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 92, in __call__
+    return self.f(pil_img)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 108, in return_function
+    im = self.xform(im, level)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 130, in <lambda>
+    lambda pil_img, level: ImageOps.equalize(
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/PIL/ImageOps.py", line 362, in equalize
+    return _lut(image, lut)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/PIL/ImageOps.py", line 57, in _lut
+    raise OSError("not supported for this image mode")
+OSError: not supported for this image mode
+Traceback (most recent call last):
+  File "/home/yu-jw19/venom/project2/train.py", line 578, in <module>
+    main()
+  File "/home/yu-jw19/venom/project2/train.py", line 405, in main
+    train_metrics = train(train_loader, model, ce_criterion, optimizer, epoch)
+  File "/home/yu-jw19/venom/project2/train.py", line 439, in train
+    for i, (x, target) in enumerate(train_loader):
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 521, in __next__
+    data = self._next_data()
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1203, in _next_data
+    return self._process_data(data)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/dataloader.py", line 1229, in _process_data
+    data.reraise()
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/_utils.py", line 425, in reraise
+    raise self.exc_type(msg)
+OSError: Caught OSError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
+    data = fetcher.fetch(index)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 44, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 44, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/yu-jw19/venom/project2/dataset.py", line 36, in __getitem__
+    img = self.transform(img)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/torchvision/transforms/transforms.py", line 60, in __call__
+    img = t(img)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 710, in __call__
+    img = op.pil_transformer(1., self.m)(img)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 92, in __call__
+    return self.f(pil_img)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 108, in return_function
+    im = self.xform(im, level)
+  File "/home/yu-jw19/venom/project2/aug_lib.py", line 130, in <lambda>
+    lambda pil_img, level: ImageOps.equalize(
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/PIL/ImageOps.py", line 362, in equalize
+    return _lut(image, lut)
+  File "/home/yu-jw19/.local/lib/python3.9/site-packages/PIL/ImageOps.py", line 57, in _lut
+    raise OSError("not supported for this image mode")
+OSError: not supported for this image mode
