@@ -1,0 +1,20 @@
+
+Standard Augmentation!
+/home/yu-jw19/venom/project2/dataset.py:25: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  self.target = target[np.where(self.data[:,-1]=='Training')].reshape(-1,1)
+/home/yu-jw19/venom/project2/dataset.py:28: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+  self.target = target[np.where(self.data[:,-1]=='Test')].reshape(-1,1)
+Number of final features: 64
+Number of model parameters: 466711
+Traceback (most recent call last):
+  File "/home/yu-jw19/venom/project2/train.py", line 573, in <module>
+    main()
+  File "/home/yu-jw19/venom/project2/train.py", line 370, in main
+    with open(f'{record_path}/config.yaml', 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './Emotionlog/resnet-32_first_test_default_name/no_0_standard-Aug__dropout__cos-lr_/config.yaml'
+Traceback (most recent call last):
+  File "/home/yu-jw19/venom/project2/train.py", line 573, in <module>
+    main()
+  File "/home/yu-jw19/venom/project2/train.py", line 370, in main
+    with open(f'{record_path}/config.yaml', 'w') as f:
+FileNotFoundError: [Errno 2] No such file or directory: './Emotionlog/resnet-32_first_test_default_name/no_0_standard-Aug__dropout__cos-lr_/config.yaml'
