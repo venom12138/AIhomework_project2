@@ -658,6 +658,17 @@ def set_augmentation_space(augmentation_space, num_strengths, custom_augmentatio
             custom_augmentation_space_augs_mapping[aug] for aug in custom_augmentation_space_augs
         ]
         print("CUSTOM Augs set to:", ALL_TRANSFORMS)
+    elif 'grey' in augmentation_space:
+        ALL_TRANSFORMS = [
+            identity,
+            rotate,  # extra coin-flip
+            flip_lr,
+            flip_ud,
+            shear_x,  # extra coin-flip
+            shear_y,  # extra coin-flip
+            translate_x,  # extra coin-flip
+            translate_y  # extra coin-flip
+        ]
     else:
         if 'standard' not in augmentation_space:
             raise ValueError(f"Unknown search space {augmentation_space}")
@@ -678,8 +689,8 @@ def set_augmentation_space(augmentation_space, num_strengths, custom_augmentatio
             translate_y  # extra coin-flip
         ]
 
-set_augmentation_space('fixed_standard', 31)
-
+# set_augmentation_space('fixed_standard', 31)
+set_augmentation_space('grey_scale', 31)
 
 def apply_augmentation(aug_idx, m, img):
     return ALL_TRANSFORMS[aug_idx].pil_transformer(1., m)(img)

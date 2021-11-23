@@ -65,6 +65,9 @@ parser.add_argument('--print-freq', '-p', default=10, type=int,
 parser.add_argument('--layers', default=32, type=int,
                     help='total number of layers (have to be explicitly given!)')
 
+parser.add_argument('--widen-factor', default=10, type=int,
+                    help='widen factor for wideresnet (default: 10)')
+
 parser.add_argument('--droprate', default=0.3, type=float,
                     help='dropout probability (default: 0.0)')
 # ResNeXt
@@ -74,8 +77,10 @@ parser.add_argument('--cardinality', default=8, type=int,
 # DenseNet
 parser.add_argument('--growth-rate', default=12, type=int,
                     help='growth rate for densenet_bc (default: 12)')
+
 parser.add_argument('--compression-rate', default=0.5, type=float,
                     help='compression rate for densenet_bc (default: 0.5)')
+
 parser.add_argument('--bn-size', default=4, type=int,
                     help='cmultiplicative factor of bottle neck layers for densenet_bc (default: 4)')
 
@@ -255,8 +260,9 @@ def main():
 
     class_num = 7
 
-    normalize = transforms.Normalize(mean=[x / 255.0 for x in [125.3, 123.0, 113.9]],
-                                    std=[x / 255.0 for x in [63.0, 62.1, 66.7]])
+    # normalize = transforms.Normalize(mean=[x / 255.0 for x in [125.3, 123.0, 113.9]],
+    #                                 std=[x / 255.0 for x in [63.0, 62.1, 66.7]])
+    normalize = transforms.Normalize(mean=0.4914,std=0.247)
 
     if args.augment:
         if args.randaugment:
