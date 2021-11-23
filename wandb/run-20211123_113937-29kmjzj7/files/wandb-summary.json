@@ -1,1 +1,1 @@
-{"epoch": 79, "epoch_time": "1.8", "lr": 0.07500000000000001, "eval_loss": 1.2581714579042003, "eval_top1": {"max": 54.346614655893006}, "train_loss": 1.1935701395734575, "train_top1": 56.06255878319731, "_runtime": 8702, "_timestamp": 1637647479, "_step": 79}
+{"epoch": 239, "epoch_time": "1.3", "lr": 0.0, "eval_loss": 1.1413282383846752, "eval_top1": {"max": 65.56143772638617}, "train_loss": 0.4852833285231738, "train_top1": 82.70228847936966, "_runtime": 22047, "_timestamp": 1637660824, "_step": 239, "_wandb": {"runtime": 22047}}

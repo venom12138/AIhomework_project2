@@ -115,7 +115,7 @@ parser.add_argument('--cos_lr', dest='cos_lr', action='store_true',
                     help='whether to use cosine learning rate')
 parser.set_defaults(cos_lr=False)
 
-# parser.add_argument('--epochs', type=int, default=160)
+parser.add_argument('--epochs', type=int, default=160)
 parser.add_argument('--initial_learning_rate', type=float, default=0.1)
 parser.add_argument('--changing_lr', type=int, nargs="+", default=[80, 120])
 parser.add_argument('--en_wandb', action='store_true')
@@ -268,14 +268,14 @@ def main():
         if args.randaugment:
             print('Randaugment!')
             transform_train = transforms.Compose([
-                    transforms.RandomCrop(32, padding=4),
+                    transforms.RandomCrop(48, padding=4),
                     transforms.RandomHorizontalFlip(),
                     transforms.ToTensor(),
                     normalize,
                 ])
             augmentpolicy = aug_lib.RandAugment(n = args.N, m = args.M)
             transform_train.transforms.insert(0, augmentpolicy)
-            transform_train.transforms.append(aug_lib.cutoutdefault(16))
+            transform_train.transforms.append(aug_lib.cutoutdefault(8))
         else:
             print('Standard Augmentation!')
             transform_train = transforms.Compose([
@@ -283,7 +283,7 @@ def main():
                     transforms.Lambda(lambda x: F.pad(x.unsqueeze(0),
                                                     (4, 4, 4, 4), mode='reflect').squeeze()),
                     transforms.ToPILImage(),
-                    transforms.RandomCrop(32),
+                    transforms.RandomCrop(48),
                     transforms.RandomHorizontalFlip(),
                     transforms.ToTensor(),
                     normalize,
@@ -306,7 +306,7 @@ def main():
         batch_size=training_configurations[args.model]['batch_size'], shuffle=True, **kwargs)
     
     val_loader = torch.utils.data.DataLoader(
-        EmotionDataset('/home/yu-jw19/venom/project2/data/emotion.csv',transform=transform_train, train=False),
+        EmotionDataset('/home/yu-jw19/venom/project2/data/emotion.csv',transform=transform_test, train=False),
         batch_size=training_configurations[args.model]['batch_size'], shuffle=False, **kwargs)
 
     # create model

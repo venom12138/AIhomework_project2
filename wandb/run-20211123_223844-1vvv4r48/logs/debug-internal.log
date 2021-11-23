@@ -1,0 +1,505 @@
+2021-11-23 22:38:44,902 INFO    MainThread:271132 [internal.py:wandb_internal():87] W&B internal server running at pid: 271132, started at: 2021-11-23 22:38:44.902796
+2021-11-23 22:38:44,905 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: check_version
+2021-11-23 22:38:44,905 INFO    WriterThread:271132 [datastore.py:open_for_write():77] open: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/run-1vvv4r48.wandb
+2021-11-23 22:38:44,908 DEBUG   SenderThread:271132 [sender.py:send():238] send: header
+2021-11-23 22:38:44,908 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: check_version
+2021-11-23 22:38:47,563 DEBUG   SenderThread:271132 [sender.py:send():238] send: run
+2021-11-23 22:38:48,055 INFO    SenderThread:271132 [dir_watcher.py:__init__():169] watching files in: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files
+2021-11-23 22:38:48,055 INFO    SenderThread:271132 [sender.py:_start_run_threads():825] run started: 1vvv4r48 with start time 1637678324
+2021-11-23 22:38:48,056 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:38:48,056 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:38:48,057 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: run_start
+2021-11-23 22:38:48,854 DEBUG   HandlerThread:271132 [meta.py:__init__():40] meta init
+2021-11-23 22:38:48,854 DEBUG   HandlerThread:271132 [meta.py:__init__():54] meta init done
+2021-11-23 22:38:48,854 DEBUG   HandlerThread:271132 [meta.py:probe():214] probe
+2021-11-23 22:38:48,861 DEBUG   HandlerThread:271132 [meta.py:_setup_git():204] setup git
+2021-11-23 22:38:48,881 DEBUG   HandlerThread:271132 [meta.py:_setup_git():211] setup git done
+2021-11-23 22:38:48,881 DEBUG   HandlerThread:271132 [meta.py:_save_pip():58] save pip
+2021-11-23 22:38:48,882 DEBUG   HandlerThread:271132 [meta.py:_save_pip():72] save pip done
+2021-11-23 22:38:48,882 DEBUG   HandlerThread:271132 [meta.py:probe():252] probe done
+2021-11-23 22:38:48,888 DEBUG   SenderThread:271132 [sender.py:send():238] send: files
+2021-11-23 22:38:48,888 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-metadata.json with policy now
+2021-11-23 22:38:48,898 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:38:48,899 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:38:49,058 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_created():217] file/dir created: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:38:49,059 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_created():217] file/dir created: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:38:49,059 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_created():217] file/dir created: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-metadata.json
+2021-11-23 22:38:49,059 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_created():217] file/dir created: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/requirements.txt
+2021-11-23 22:38:49,347 DEBUG   SenderThread:271132 [sender.py:send():238] send: config
+2021-11-23 22:38:49,348 DEBUG   SenderThread:271132 [sender.py:send():238] send: metric
+2021-11-23 22:38:49,349 DEBUG   SenderThread:271132 [sender.py:send():238] send: metric
+2021-11-23 22:38:49,871 INFO    Thread-11 :271132 [upload_job.py:push():137] Uploaded file /tmp/tmpsax_yarlwandb/3bnq5x7g-wandb-metadata.json
+2021-11-23 22:38:51,057 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:04,371 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:39:04,372 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:39:15,075 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:16,076 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/config.yaml
+2021-11-23 22:39:17,325 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:39:19,855 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:39:19,855 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:39:29,085 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:35,089 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:35,311 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:39:35,312 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:39:39,091 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:45,096 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:47,755 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:39:50,760 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:39:50,761 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:39:51,100 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:39:55,102 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:01,107 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:06,259 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:40:06,259 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:40:07,111 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:13,115 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:17,118 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:18,181 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:40:21,855 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:40:21,855 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:40:23,123 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:29,127 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:33,130 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:37,312 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:40:37,313 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:40:39,137 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:46,142 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:48,616 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:40:50,145 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:40:52,764 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:40:52,765 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:40:56,149 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:02,154 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:06,157 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:08,220 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:41:08,220 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:41:12,162 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:18,166 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:19,038 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:41:23,676 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:41:23,677 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:41:24,170 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:28,173 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:37,380 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:41:37,381 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:41:37,381 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:41:38,180 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:38,181 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:41:39,143 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:41:39,143 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:41:40,181 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:44,184 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:49,529 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:41:50,189 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:41:54,592 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:41:54,592 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:41:56,193 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:00,196 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:06,200 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:10,047 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:42:10,048 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:42:12,205 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:18,209 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:19,951 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:42:22,212 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:25,503 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:42:25,503 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:42:26,215 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:32,220 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:38,224 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:40,952 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:42:40,953 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:42:44,229 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:48,232 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:50,375 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:42:54,236 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:42:56,410 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:42:56,410 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:43:00,241 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:04,244 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:10,248 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:11,859 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:43:11,859 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:43:16,252 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:20,255 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:20,795 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:43:26,259 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:27,310 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:43:27,311 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:43:32,264 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:38,268 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:40,269 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:42,774 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:43:42,775 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:43:48,276 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:43:51,228 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:43:58,221 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:43:58,222 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:44:01,932 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:44:01,932 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:44:01,933 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:44:02,287 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:02,288 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:44:04,289 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:08,292 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:13,675 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:44:13,676 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:44:14,296 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:18,299 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:21,665 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:44:24,303 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:29,131 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:44:29,132 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:44:30,308 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:34,311 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:40,314 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:44,574 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:44:44,574 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:44:46,318 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:52,090 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:44:52,322 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:44:56,325 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:00,031 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:45:00,032 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:45:02,328 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:08,332 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:12,334 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:15,481 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:45:15,482 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:45:18,338 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:22,514 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:45:24,342 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:28,344 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:30,930 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:45:30,930 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:45:34,348 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:40,352 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:46,356 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:46,374 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:45:46,374 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:45:50,358 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:45:52,943 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:45:56,362 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:01,824 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:46:01,825 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:46:03,367 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:06,369 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:15,375 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:17,274 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:46:17,285 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:46:23,376 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:46:25,103 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:46:25,104 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:46:25,104 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:46:25,383 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:46:26,384 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:27,385 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:31,387 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:32,744 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:46:32,745 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:46:37,390 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:43,394 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:48,192 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:46:48,192 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:46:49,397 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:53,399 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:46:53,789 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:46:59,403 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:03,647 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:47:03,647 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:47:05,407 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:09,410 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:15,414 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:19,096 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:47:19,096 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:47:21,418 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:24,197 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:47:27,423 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:31,426 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:34,537 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:47:34,538 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:47:37,430 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:43,434 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:47,437 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:49,977 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:47:49,977 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:47:53,442 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:47:54,614 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:47:59,445 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:05,432 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:48:05,432 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:48:05,449 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:09,452 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:15,456 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:20,890 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:48:20,891 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:48:21,460 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:25,001 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:48:27,464 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:28,465 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:36,339 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:48:36,340 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:48:37,471 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:49,357 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:48:49,357 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:48:49,358 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:48:49,481 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:48:50,482 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:51,482 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:48:51,801 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:48:51,801 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:48:55,442 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:48:55,485 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:01,489 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:07,249 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:49:07,249 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:49:07,493 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:13,496 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:17,499 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:22,702 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:49:22,702 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:49:23,504 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:25,863 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:49:29,508 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:33,511 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:38,153 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:49:38,154 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:49:39,516 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:45,520 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:51,525 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:53,617 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:49:53,617 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:49:55,528 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:49:56,287 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:50:01,532 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:07,536 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:09,073 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:50:09,073 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:50:13,541 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:17,544 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:23,548 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:24,526 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:50:24,527 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:50:26,706 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:50:29,552 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:33,555 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:39,560 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:39,982 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:50:39,982 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:50:45,564 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:51,569 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:52,569 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:50:55,437 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:50:55,437 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:50:57,110 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:51:01,576 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:10,893 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:51:10,893 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:51:12,515 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:51:12,516 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:51:12,517 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:51:12,584 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:51:13,585 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:14,586 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:19,589 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:25,593 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:26,350 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:51:26,350 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:51:27,528 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:51:29,596 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:35,599 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:41,604 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:41,800 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:51:41,800 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:51:47,608 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:51,611 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:57,267 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:51:57,267 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:51:57,615 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:51:57,936 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:52:03,620 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:07,623 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:12,720 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:52:12,721 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:52:13,627 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:19,632 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:25,636 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:28,175 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:52:28,175 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:52:28,624 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:52:29,639 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:35,643 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:41,647 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:43,626 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:52:43,626 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:52:45,650 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:51,655 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:57,659 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:52:58,791 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:52:59,094 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:52:59,094 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:53:03,663 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:07,666 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:13,670 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:14,551 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:53:14,552 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:53:16,672 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:25,679 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:29,224 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:53:29,304 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:53:29,305 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:53:29,305 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:53:29,682 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:53:29,997 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:53:29,998 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:53:30,683 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:31,683 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:35,686 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:41,690 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:45,452 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:53:45,453 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:53:47,695 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:53,699 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:57,702 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:53:59,644 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:54:00,909 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:54:00,910 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:54:03,705 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:09,709 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:13,712 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:16,371 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:54:16,371 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:54:19,717 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:25,721 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:29,724 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:30,067 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:54:31,821 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:54:31,822 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:54:35,728 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:41,733 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:47,269 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:54:47,270 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:54:47,737 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:51,740 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:54:57,745 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:00,482 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:55:02,722 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:55:02,723 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:55:03,749 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:07,752 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:13,756 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:18,185 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:55:18,185 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:55:19,761 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:23,764 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:29,768 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:30,895 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:55:32,771 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:33,637 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:55:33,637 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:55:41,777 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:49,085 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:55:49,086 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:55:52,314 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:55:52,314 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:55:52,315 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:55:52,785 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:55:53,786 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:54,786 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:55:59,790 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:01,332 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:56:03,793 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:04,540 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:56:04,540 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:56:09,797 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:15,801 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:20,009 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:56:20,009 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:56:21,805 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:25,808 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:31,761 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:56:31,812 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:35,474 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:56:35,474 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:56:37,816 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:41,818 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:47,823 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:50,931 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:56:50,932 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:56:53,827 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:56:57,830 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:02,183 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:57:03,834 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:06,383 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:57:06,383 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:57:09,839 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:15,842 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:19,845 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:21,853 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:57:21,854 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:57:25,849 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:31,853 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:32,582 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:57:35,855 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:37,309 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:57:37,309 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:57:41,859 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:47,864 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:52,764 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:57:52,764 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:57:53,868 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:57:54,869 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:03,010 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:58:03,875 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:08,220 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:58:08,220 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:58:11,084 DEBUG   SenderThread:271132 [sender.py:send():238] send: history
+2021-11-23 22:58:11,085 DEBUG   SenderThread:271132 [sender.py:send():238] send: summary
+2021-11-23 22:58:11,216 INFO    SenderThread:271132 [sender.py:_save_file():960] saving file wandb-summary.json with policy end
+2021-11-23 22:58:11,882 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:11,882 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/wandb-summary.json
+2021-11-23 22:58:12,883 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:17,886 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:23,676 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:58:23,677 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:58:23,891 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:27,894 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:33,422 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:58:33,898 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:39,127 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:58:39,127 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:58:39,902 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:45,907 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:49,910 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:58:54,576 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:58:54,576 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:58:55,914 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:01,918 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:03,838 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:59:05,921 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:10,026 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:59:10,027 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:59:11,925 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:17,930 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:23,934 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:25,540 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:59:25,541 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:59:27,937 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:33,942 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:34,275 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 22:59:39,946 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:40,991 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:59:40,991 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 22:59:45,951 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:49,954 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:55,958 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 22:59:56,454 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 22:59:56,455 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 23:00:01,963 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 23:00:04,699 DEBUG   SenderThread:271132 [sender.py:send():238] send: stats
+2021-11-23 23:00:05,966 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 23:00:11,929 DEBUG   HandlerThread:271132 [handler.py:handle_request():130] handle_request: stop_status
+2021-11-23 23:00:11,929 DEBUG   SenderThread:271132 [sender.py:send_request():252] send_request: stop_status
+2021-11-23 23:00:11,970 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 23:00:14,973 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
+2021-11-23 23:00:23,979 INFO    Thread-8  :271132 [dir_watcher.py:_on_file_modified():230] file/dir modified: /home/yu-jw19/venom/project2/wandb/run-20211123_223844-1vvv4r48/files/output.log
