@@ -121,8 +121,11 @@ parser.add_argument('--changing_lr', type=int, nargs="+", default=[80, 120])
 parser.add_argument('--en_wandb', action='store_true')
 parser.add_argument('--warm_up', dest='warm_up', action='store_true',
                     help='whether to use warm_up')
-parser.add_argument('--epochs', type=int, default=350)
+parser.add_argument('--batch_size', type=int, default=128)
 parser.set_defaults(warm_up=False)
+
+parser.add_argument('--augment_epoch', type=int, default=200)
+parser.add_argument('--holes', type=int, default=8)
 args = parser.parse_args()
 
 # Configurations adopted for training deep networks.
@@ -276,7 +279,7 @@ def main():
                 ])
             augmentpolicy = aug_lib.RandAugment(n = args.N, m = args.M)
             transform_train.transforms.insert(0, augmentpolicy)
-            transform_train.transforms.append(aug_lib.cutoutdefault(8))
+            transform_train.transforms.append(aug_lib.cutoutdefault(args.holes))
         else:
             print('Standard Augmentation!')
             transform_train = transforms.Compose([
@@ -302,7 +305,21 @@ def main():
 
     kwargs = {'num_workers': 1, 'pin_memory': True}
     
-    train_loader = torch.utils.data.DataLoader(
+    aug_transform_train = transforms.Compose([
+                    transforms.RandomCrop(48, padding=4),
+                    transforms.RandomHorizontalFlip(),
+                    transforms.ToTensor(),
+                    normalize,
+                ])
+    augmentp = aug_lib.RandAugment(n = args.N, m = args.M)
+    aug_transform_train.transforms.insert(0, augmentp)
+    aug_transform_train.transforms.append(aug_lib.cutoutdefault(args.holes))
+            
+    augtrain_loader = torch.utils.data.DataLoader(
+        EmotionDataset('./data/emotion.csv',transform=aug_transform_train, train=True),
+        batch_size=training_configurations[args.model]['batch_size'], shuffle=True, **kwargs)
+    
+    normaltrain_loader = torch.utils.data.DataLoader(
         EmotionDataset('./data/emotion.csv',transform=transform_train, train=True),
         batch_size=training_configurations[args.model]['batch_size'], shuffle=True, **kwargs)
     
@@ -407,7 +424,10 @@ def main():
     for epoch in range(start_epoch, training_configurations[args.model]['epochs']):
         start_time = time.time()
         adjust_learning_rate(optimizer, epoch + 1)
-
+        if epoch > args.augment_epoch:
+            train_loader = augtrain_loader
+        else:
+            train_loader = normaltrain_loader
         # train for one epoch
         train_metrics = train(train_loader, model, ce_criterion, optimizer, epoch)
 
@@ -524,9 +544,7 @@ class Full_layer(torch.nn.Module):
     def forward(self, x):
         x = self.fc(x)
         return x
-    
-
-
+        
 
 def save_checkpoint(state, is_best, checkpoint='checkpoint', filename='checkpoint.pth.tar'):
     filepath = os.path.join(checkpoint, filename)
