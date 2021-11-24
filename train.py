@@ -384,7 +384,8 @@ def main():
 
     ce_criterion = nn.CrossEntropyLoss().cuda()
 
-    optimizer = torch.optim.SGD(model.parameters(),
+    optimizer = torch.optim.SGD([{model.parameters()},
+                                {'params': fc.parameters()}],
                                 lr=training_configurations[args.model]['initial_learning_rate'],
                                 momentum=training_configurations[args.model]['momentum'],
                                 nesterov=training_configurations[args.model]['nesterov'],
@@ -429,10 +430,10 @@ def main():
         else:
             train_loader = normaltrain_loader
         # train for one epoch
-        train_metrics = train(train_loader, model, ce_criterion, optimizer, epoch)
+        train_metrics = train(train_loader, model, fc, ce_criterion, optimizer, epoch)
 
         # evaluate on validation set
-        eval_metrics, prec1 = validate(val_loader, model, ce_criterion, epoch)
+        eval_metrics, prec1 = validate(val_loader, model, fc, ce_criterion, epoch)
 
         # remember best prec@1 and save checkpoint
         is_best = prec1 > best_prec1
@@ -451,7 +452,7 @@ def main():
                     epoch_time=f'{(time.time() - start_time) / 60:.1f}', lr=optimizer.param_groups[0]['lr'])
     exp.finish()
 
-def train(train_loader, model, criterion, optimizer, epoch):
+def train(train_loader, model, fc, criterion, optimizer, epoch):
     """Train for one epoch on the training set"""
     batch_time = AverageMeter()
     losses = AverageMeter()
@@ -461,14 +462,20 @@ def train(train_loader, model, criterion, optimizer, epoch):
 
     # switch to train mode
     model.train()
+    fc.train()
 
     end = time.time()
     for i, (x, target) in enumerate(train_loader):
         target = target.cuda()
         x = x.cuda()
+        
+        input_var = torch.autograd.Variable(x)
+        target_var = torch.autograd.Variable(target)
 
-        output = model(x)
-        loss = criterion(output, target)
+        features = model(input_var)
+        output = fc(features)
+        loss = criterion(output, target_var)
+        
         # measure accuracy and record loss
         prec1 = accuracy(output.data, target, topk=(1,))[0]
         losses.update(loss.data.item(), x.size(0))
@@ -495,7 +502,7 @@ def train(train_loader, model, criterion, optimizer, epoch):
 
     return OrderedDict(loss=losses.ave, top1=top1.ave)
 
-def validate(val_loader, model, criterion, epoch):
+def validate(val_loader, model, fc, criterion, epoch):
     """Perform validation on the validation set"""
     batch_time = AverageMeter()
     losses = AverageMeter()
@@ -505,15 +512,21 @@ def validate(val_loader, model, criterion, epoch):
 
     # switch to evaluate mode
     model.eval()
-
+    fc.eval()
+    
     end = time.time()
     for i, (input, target) in enumerate(val_loader):
         target = target.cuda()
         input = input.cuda()
+        
+        input_var = torch.autograd.Variable(input)
+        target_var = torch.autograd.Variable(target)
 
         with torch.no_grad():
-            output = model(input)
-            loss = criterion(output, target)
+            features = model(input_var)
+            output = fc(features)
+            
+        loss = criterion(output, target)
 
         # measure accuracy and record loss
         prec1 = accuracy(output.data, target, topk=(1,))[0]

@@ -575,7 +575,7 @@ def train(train_loader, model, fc, criterion, optimizer, epoch, scheduler=None):
         target_var = torch.autograd.Variable(target)
 
         # compute output
-        #loss, output = criterion(model, fc, input_var, target_var, ratio) # delete byyjw
+        
         features = model(input_var) #
         output = fc(features)
         loss = criterion(output, target_var)            # add by yjw
