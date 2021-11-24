@@ -1,4 +1,4 @@
 /data
 /Emotionlog
-*.sh
 /wandb
+*.sh

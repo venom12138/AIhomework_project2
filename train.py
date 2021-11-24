@@ -115,12 +115,13 @@ parser.add_argument('--cos_lr', dest='cos_lr', action='store_true',
                     help='whether to use cosine learning rate')
 parser.set_defaults(cos_lr=False)
 
-parser.add_argument('--epochs', type=int, default=160)
+parser.add_argument('--epochs', type=int, default=350)
 parser.add_argument('--initial_learning_rate', type=float, default=0.1)
 parser.add_argument('--changing_lr', type=int, nargs="+", default=[80, 120])
 parser.add_argument('--en_wandb', action='store_true')
 parser.add_argument('--warm_up', dest='warm_up', action='store_true',
                     help='whether to use warm_up')
+parser.add_argument('--epochs', type=int, default=350)
 parser.set_defaults(warm_up=False)
 args = parser.parse_args()
 
@@ -302,11 +303,11 @@ def main():
     kwargs = {'num_workers': 1, 'pin_memory': True}
     
     train_loader = torch.utils.data.DataLoader(
-        EmotionDataset('/home/yu-jw19/venom/project2/data/emotion.csv',transform=transform_train, train=True),
+        EmotionDataset('./data/emotion.csv',transform=transform_train, train=True),
         batch_size=training_configurations[args.model]['batch_size'], shuffle=True, **kwargs)
     
     val_loader = torch.utils.data.DataLoader(
-        EmotionDataset('/home/yu-jw19/venom/project2/data/emotion.csv',transform=transform_test, train=False),
+        EmotionDataset('./data/emotion.csv',transform=transform_test, train=False),
         batch_size=training_configurations[args.model]['batch_size'], shuffle=False, **kwargs)
 
     # create model
