@@ -384,7 +384,7 @@ def main():
 
     ce_criterion = nn.CrossEntropyLoss().cuda()
 
-    optimizer = torch.optim.SGD([{model.parameters()},
+    optimizer = torch.optim.SGD([{'params': model.parameters()},
                                 {'params': fc.parameters()}],
                                 lr=training_configurations[args.model]['initial_learning_rate'],
                                 momentum=training_configurations[args.model]['momentum'],
