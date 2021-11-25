@@ -148,7 +148,7 @@ training_configurations = {
         'lr_decay_rate': 0.2,
         'momentum': 0.9,
         'nesterov': True,
-        'weight_decay': 5e-4,
+        'weight_decay': 1e-4,#5e-4,
     },
     'se_resnet': {
         'epochs': 200,
@@ -272,7 +272,7 @@ def main():
         if args.randaugment:
             print('Randaugment!')
             transform_train = transforms.Compose([
-                    transforms.RandomCrop(48, padding=4),
+                    transforms.RandomCrop(40, padding=4),
                     transforms.RandomHorizontalFlip(),
                     transforms.ToTensor(),
                     normalize,
@@ -287,7 +287,7 @@ def main():
                     transforms.Lambda(lambda x: F.pad(x.unsqueeze(0),
                                                     (4, 4, 4, 4), mode='reflect').squeeze()),
                     transforms.ToPILImage(),
-                    transforms.RandomCrop(48),
+                    transforms.RandomCrop(40),
                     transforms.RandomHorizontalFlip(),
                     transforms.ToTensor(),
                     normalize,
@@ -306,7 +306,7 @@ def main():
     kwargs = {'num_workers': 1, 'pin_memory': True}
     
     aug_transform_train = transforms.Compose([
-                    transforms.RandomCrop(48, padding=4),
+                    transforms.RandomCrop(40, padding=4),
                     transforms.RandomHorizontalFlip(),
                     transforms.ToTensor(),
                     normalize,
@@ -471,8 +471,9 @@ def train(train_loader, model, fc, criterion, optimizer, epoch):
         
         input_var = torch.autograd.Variable(x)
         target_var = torch.autograd.Variable(target)
-
+        
         features = model(input_var)
+        
         output = fc(features)
         loss = criterion(output, target_var)
         
@@ -526,7 +527,7 @@ def validate(val_loader, model, fc, criterion, epoch):
             features = model(input_var)
             output = fc(features)
             
-        loss = criterion(output, target)
+        loss = criterion(output, target_var)
 
         # measure accuracy and record loss
         prec1 = accuracy(output.data, target, topk=(1,))[0]

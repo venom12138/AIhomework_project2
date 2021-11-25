@@ -173,8 +173,7 @@ class ResNet_Cifar(nn.Module):
         self.layer1 = self._make_layer(block, 16, layers[0])
         self.layer2 = self._make_layer(block, 32, layers[1], stride=2)
         self.layer3 = self._make_layer(block, 64, layers[2], stride=2)
-        self.avgpool = nn.AvgPool2d(8, stride=1)
-
+        self.avgpool = nn.AdaptiveAvgPool2d((1, 1))
 
         # self.kkk = torch.nn.Linear(64, 2)
         # self.fc = nn.Linear(64 * block.expansion, num_classes)
@@ -211,8 +210,9 @@ class ResNet_Cifar(nn.Module):
         x = self.layer1(x) # feature map1
         x = self.layer2(x) # feature map2
         x = self.layer3(x)
-
+        print(x.size())
         x = self.avgpool(x)
+        print(x.size())
         x = x.view(x.size(0), -1)
 
         return x
@@ -230,7 +230,7 @@ class ResNet_Cifar(nn.Module):
         # x = x.view(x.size(0), -1)
 
         return feat1, feat2, feat3
- 
+
 
 class ResNet_MNIST(nn.Module):
 
@@ -399,6 +399,6 @@ def preact_resnet1001_cifar(**kwargs):
 
 if __name__ == '__main__':
     net = resnet20_cifar()
-    y = net(torch.randn(1, 3, 64, 64))
+    y = net(torch.randn(1, 1, 64, 64))
     print(net)
     print(y.size())

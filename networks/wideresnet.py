@@ -85,3 +85,9 @@ class WideResNet(nn.Module):
         out = F.avg_pool2d(out, 8)
         out = out.view(-1, self.nChannels)
         return out #, self.fc(out)
+
+if __name__ == '__main__':
+    net = WideResNet(28,10)
+    y = net(torch.randn(1, 1, 64, 64))
+    print(net)
+    print(y.size())

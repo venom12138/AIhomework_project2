@@ -55,15 +55,21 @@ class EmotionDataset(Dataset):
 # print(dataset.target.shape)
 if __name__=='__main__':
     transform_train = transforms.Compose([
-                    transforms.RandomCrop(32, padding=4),
+                    transforms.RandomCrop(48, padding=4),
                     transforms.RandomHorizontalFlip(),
                     transforms.ToTensor(),
                 ])
     augmentpolicy = aug_lib.RandAugment(n = 2, m = 10)
     transform_train.transforms.insert(0, augmentpolicy)
-    transform_train.transforms.append(aug_lib.cutoutdefault(16))
+    transform_train.transforms.append(aug_lib.cutoutdefault(4))
     train_loader = torch.utils.data.DataLoader(
         EmotionDataset('/home/yu-jw19/venom/project2/data/emotion.csv',transform=transform_train, train=True),batch_size=32, shuffle=True)
     for x, (i, data) in enumerate(train_loader):
     # i表示第几个batch， data表示该batch对应的数据，包含data和对应的labels
-        print("第 {} 个Batch \n{}".format(i, data))
+        # print("第 {} 个Batch \n{}".format(i, data))
+        count = 0
+        for j in i:
+            count += 1
+            im = transforms.ToPILImage()(j)
+            im = im.save("./saved_pic/{}.jpg".format(count))
+        dfdfd
