@@ -23,6 +23,7 @@ import networks.densenet_bc
 import networks.shake_pyramidnet
 import networks.resnext
 import networks.shake_shake
+from ISDA import EstimatorCV, ISDALoss
 
 from autoaugment import CIFAR10Policy
 from cutout import Cutout
@@ -53,8 +54,12 @@ parser.add_argument('--dataset', default='emotion', type=str,
 
 parser.add_argument('--name', default='', type=str,
                     help='name of experiment')
+
 parser.add_argument('--no', default='0', type=str,
                     help='index of the experiment (for recording convenience)')
+
+parser.add_argument('--lambda_0', default=0.5, type=float,
+                    help='hyper-patameter_\lambda for ISDA')
 
 parser.add_argument('--model', default='resnet', type=str,
                     help='deep networks to be trained')
@@ -130,6 +135,10 @@ parser.add_argument('--holes', type=int, default=8)
 parser.add_argument('--Ncrops', dest='Ncrops', action='store_true',
                     help='whether to use Ncrops')
 parser.set_defaults(Ncrops=False)
+
+parser.add_argument('--ISDA', dest='ISDA', action='store_true',
+                    help='whether to use ISDAloss')
+parser.set_defaults(ISDA=False)
 args = parser.parse_args()
 
 # Configurations adopted for training deep networks.
@@ -228,7 +237,8 @@ training_configurations = {
 
 training_configurations[args.model].update(vars(args))
 args.name = os.getenv('exp_name', default='default_group') +'_'+ os.getenv('run_name', default='default_name')
-
+if args.ISDA:
+    print('ISDA!')
 record_path = './Emotionlog/' \
             + str(args.model) \
             + '-' + str(args.layers) \
@@ -274,31 +284,30 @@ def main():
 
     if args.augment:
         if args.randaugment:
-            if not args.Ncrops:
-                print('Randaugment!')
-                transform_train = transforms.Compose([
-                        transforms.RandomCrop(40, padding=4),
-                        transforms.RandomHorizontalFlip(),
-                        transforms.ToTensor(),
-                        normalize,
-                    ])
-                augmentpolicy = aug_lib.RandAugment(n = args.N, m = args.M)
-                transform_train.transforms.insert(0, augmentpolicy)
-                transform_train.transforms.append(aug_lib.cutoutdefault(args.holes))
-            else:
-                print('Ncrops and cutout!')
-                augmentpolicy = aug_lib.RandAugment(n = args.N, m = args.M)
-                transform_train = transforms.Compose([
-                        transforms.RandomResizedCrop(48, scale=(0.8, 1.2)),
-                        transforms.RandomApply([transforms.RandomAffine(0, translate=(0.2, 0.2))], p=0.5),
-                        transforms.RandomHorizontalFlip(),
-                        transforms.RandomApply([transforms.RandomRotation(10)], p=0.5),
+            print('Randaugment!')
+            transform_train = transforms.Compose([
+                    transforms.RandomCrop(40, padding=4),
+                    transforms.RandomHorizontalFlip(),
+                    transforms.ToTensor(),
+                    normalize,
+                ])
+            augmentpolicy = aug_lib.RandAugment(n = args.N, m = args.M)
+            transform_train.transforms.insert(0, augmentpolicy)
+            transform_train.transforms.append(aug_lib.cutoutdefault(args.holes))
+            # else:
+            #     print('Ncrops and cutout!')
+            #     augmentpolicy = aug_lib.RandAugment(n = args.N, m = args.M)
+            #     transform_train = transforms.Compose([
+            #             transforms.RandomResizedCrop(48, scale=(0.8, 1.2)),
+            #             transforms.RandomApply([transforms.RandomAffine(0, translate=(0.2, 0.2))], p=0.5),
+            #             transforms.RandomHorizontalFlip(),
+            #             transforms.RandomApply([transforms.RandomRotation(10)], p=0.5),
 
-                        transforms.TenCrop(40),
-                        transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
-                        transforms.Lambda(lambda tensors: torch.stack([transforms.Normalize(mean=(0.4914,), std=(0.247,))(t) for t in tensors])),
-                        transforms.Lambda(lambda tensors: torch.stack([aug_lib.cutoutdefault(args.holes)(t) for t in tensors])),
-                    ])
+            #             transforms.TenCrop(40),
+            #             transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
+            #             transforms.Lambda(lambda tensors: torch.stack([transforms.Normalize(mean=(0.4914,), std=(0.247,))(t) for t in tensors])),
+            #             transforms.Lambda(lambda tensors: torch.stack([aug_lib.cutoutdefault(args.holes)(t) for t in tensors])),
+            #         ])
         else:
             print('Standard Augmentation!')
             transform_train = transforms.Compose([
@@ -407,7 +416,8 @@ def main():
     ))
     
     cudnn.benchmark = True
-
+    
+    isda_criterion = ISDALoss(int(model.feature_num), class_num).cuda()
     ce_criterion = nn.CrossEntropyLoss().cuda()
 
     optimizer = torch.optim.SGD([{'params': model.parameters()},
@@ -441,23 +451,24 @@ def main():
         args.checkpoint = os.path.dirname(args.resume)
         checkpoint = torch.load(args.resume)
         start_epoch = checkpoint['epoch']
+        if args.ISDA:
+            isda_criterion = checkpoint['isda_criterion']
         model.load_state_dict(checkpoint['state_dict'])
         fc.load_state_dict(checkpoint['fc'])
         optimizer.load_state_dict(checkpoint['optimizer'])
         best_prec1 = checkpoint['best_acc']
     else:
         start_epoch = 0
-
+    if args.ISDA:
+        train_criterion = isda_criterion
+    else:
+        train_criterion = ce_criterion
     for epoch in range(start_epoch, training_configurations[args.model]['epochs']):
         start_time = time.time()
         adjust_learning_rate(optimizer, epoch + 1)
-        # if epoch > args.augment_epoch:
-        #     train_loader = augtrain_loader
-        # else:
-        #     train_loader = normaltrain_loader
-        # train for one epoch
         
-        train_metrics = train(train_loader, model, fc, ce_criterion, optimizer, epoch, Ncrop=args.Ncrops)
+        
+        train_metrics = train(train_loader, model, fc, train_criterion, optimizer, epoch, args)
 
         # evaluate on validation set
         eval_metrics, prec1 = validate(val_loader, model, fc, ce_criterion, epoch, Ncrop=args.Ncrops)
@@ -465,21 +476,30 @@ def main():
         # remember best prec@1 and save checkpoint
         is_best = prec1 > best_prec1
         best_prec1 = max(prec1, best_prec1)
-
-        save_checkpoint({
-            'epoch': epoch + 1,
-            'state_dict': model.state_dict(),
-            'fc': fc.state_dict(),
-            'best_acc': best_prec1,
-            'optimizer': optimizer.state_dict(),
-        }, is_best, checkpoint=exp.save_dir)
+        if args.ISDA:
+            save_checkpoint({
+                'epoch': epoch + 1,
+                'state_dict': model.state_dict(),
+                'fc': fc.state_dict(),
+                'best_acc': best_prec1,
+                'optimizer': optimizer.state_dict(),
+                'isda_criterion': isda_criterion,
+            }, is_best, checkpoint=exp.save_dir)
+        else:
+            save_checkpoint({
+                'epoch': epoch + 1,
+                'state_dict': model.state_dict(),
+                'fc': fc.state_dict(),
+                'best_acc': best_prec1,
+                'optimizer': optimizer.state_dict(),
+            }, is_best, checkpoint=exp.save_dir)
         print('Best accuracy: ', best_prec1)
 
         exp.write(epoch, eval_metrics, train_metrics,
                     epoch_time=f'{(time.time() - start_time) / 60:.1f}', lr=optimizer.param_groups[0]['lr'])
     exp.finish()
 
-def train(train_loader, model, fc, criterion, optimizer, epoch, Ncrop=False):
+def train(train_loader, model, fc, criterion, optimizer, epoch, args):
     """Train for one epoch on the training set"""
     batch_time = AverageMeter()
     losses = AverageMeter()
@@ -487,6 +507,7 @@ def train(train_loader, model, fc, criterion, optimizer, epoch, Ncrop=False):
 
     train_batches_num = len(train_loader)
 
+    ratio = args.lambda_0 * (epoch / (training_configurations[args.model]['epochs']))
     # switch to train mode
     model.train()
     fc.train()
@@ -495,17 +516,15 @@ def train(train_loader, model, fc, criterion, optimizer, epoch, Ncrop=False):
     for i, (x, target) in enumerate(train_loader):
         target = target.cuda()
         x = x.cuda()
-        if Ncrop:
-            bs, ncrops, c, h, w = x.shape
-            x = x.view(-1, c, h, w)
-            target = torch.repeat_interleave(target, repeats=ncrops, dim=0)
+        
         input_var = torch.autograd.Variable(x)
         target_var = torch.autograd.Variable(target)
-        
-        features = model(input_var)
-        
-        output = fc(features)
-        loss = criterion(output, target_var)
+        if args.ISDA:
+            loss, output = criterion(model, fc, input_var, target_var, ratio)
+        else:
+            features = model(input_var)
+            output = fc(features)
+            loss = criterion(output, target_var)
         
         # measure accuracy and record loss
         prec1 = accuracy(output.data, target, topk=(1,))[0]
