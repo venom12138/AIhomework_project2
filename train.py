@@ -316,11 +316,18 @@ def main():
                     transforms.ToTensor(),
                     normalize,
                     ])
-
-    transform_test = transforms.Compose([
-        transforms.ToTensor(),
-        normalize
+        
+    if args.Ncrops:
+        transform_test = transforms.Compose([
+            transforms.TenCrop(40),
+            transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
+            transforms.Lambda(lambda tensors: torch.stack([transforms.Normalize(mean=(0.4914,), std=(0.247,))(t) for t in tensors])),
         ])
+    else:
+        transform_test = transforms.Compose([
+            transforms.ToTensor(),
+            normalize
+            ])
 
     kwargs = {'num_workers': 1, 'pin_memory': True}
     
@@ -449,6 +456,7 @@ def main():
         # else:
         #     train_loader = normaltrain_loader
         # train for one epoch
+        
         train_metrics = train(train_loader, model, fc, ce_criterion, optimizer, epoch, Ncrop=args.Ncrops)
 
         # evaluate on validation set
