@@ -139,6 +139,11 @@ parser.set_defaults(Ncrops=False)
 parser.add_argument('--ISDA', dest='ISDA', action='store_true',
                     help='whether to use ISDAloss')
 parser.set_defaults(ISDA=False)
+
+parser.add_argument('--balance', dest='balance', action='store_true',
+                    help='whether to use class balance')
+parser.set_defaults(balance=False)
+
 args = parser.parse_args()
 
 # Configurations adopted for training deep networks.
@@ -417,9 +422,13 @@ def main():
     
     cudnn.benchmark = True
     
-    isda_criterion = ISDALoss(int(model.feature_num), class_num).cuda()
-    ce_criterion = nn.CrossEntropyLoss().cuda()
-
+    if args.balance:
+        isda_criterion = ISDALoss(int(model.feature_num), class_num, weight=torch.from_numpy(np.array([0.0686,0.6283,0.0669,0.0380,0.0567,0.0864,0.0552])).float()).cuda()
+        ce_criterion = nn.CrossEntropyLoss(weight=torch.from_numpy(np.array([0.0686,0.6283,0.0669,0.0380,0.0567,0.0864,0.0552])).float()).cuda()
+    else:
+        isda_criterion = ISDALoss(int(model.feature_num), class_num).cuda()
+        ce_criterion = nn.CrossEntropyLoss().cuda()
+        
     optimizer = torch.optim.SGD([{'params': model.parameters()},
                                 {'params': fc.parameters()}],
                                 lr=training_configurations[args.model]['initial_learning_rate'],

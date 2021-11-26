@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-
+import numpy as np
 
 class EstimatorCV():
     def __init__(self, feature_num, class_num):
@@ -70,14 +70,16 @@ class EstimatorCV():
 
 
 class ISDALoss(nn.Module):
-    def __init__(self, feature_num, class_num):
+    def __init__(self, feature_num, class_num, weight=None):
         super(ISDALoss, self).__init__()
 
         self.estimator = EstimatorCV(feature_num, class_num)
 
         self.class_num = class_num
-
-        self.cross_entropy = nn.CrossEntropyLoss()
+        if weight == None:
+            self.cross_entropy = nn.CrossEntropyLoss().float()
+        else:
+            self.cross_entropy = nn.CrossEntropyLoss(weight=weight).float()
 
     def isda_aug(self, fc, features, y, labels, cv_matrix, ratio):
 
