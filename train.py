@@ -37,7 +37,7 @@ from collections import OrderedDict
 from dataset import EmotionDataset
 import numpy as np
 from utils import ExpHandler
-
+from sklearn.metrics import precision_score, f1_score, recall_score, confusion_matrix, accuracy_score, balanced_accuracy_score
 def mkdir_p(path):
     '''make dir if not exist'''
     try:
@@ -143,6 +143,10 @@ parser.set_defaults(ISDA=False)
 parser.add_argument('--balance', dest='balance', action='store_true',
                     help='whether to use class balance')
 parser.set_defaults(balance=False)
+
+parser.add_argument('--test_metric', dest='test_metric', action='store_true',
+                    help='whether to test metric')
+parser.set_defaults(test_metric=False)
 
 args = parser.parse_args()
 
@@ -472,40 +476,44 @@ def main():
         train_criterion = isda_criterion
     else:
         train_criterion = ce_criterion
-    for epoch in range(start_epoch, training_configurations[args.model]['epochs']):
-        start_time = time.time()
-        adjust_learning_rate(optimizer, epoch + 1)
         
-        
-        train_metrics = train(train_loader, model, fc, train_criterion, optimizer, epoch, args)
+    if args.test_metric:
+        assert args.resume is not None
+        test_metric(val_loader, model, fc, ce_criterion, Ncrop=False)
+    else:
+        for epoch in range(start_epoch, training_configurations[args.model]['epochs']):
+            start_time = time.time()
+            adjust_learning_rate(optimizer, epoch + 1)
+            
+            train_metrics = train(train_loader, model, fc, train_criterion, optimizer, epoch, args)
 
-        # evaluate on validation set
-        eval_metrics, prec1 = validate(val_loader, model, fc, ce_criterion, epoch, Ncrop=args.Ncrops)
+            # evaluate on validation set
+            eval_metrics, prec1 = validate(val_loader, model, fc, ce_criterion, epoch, Ncrop=args.Ncrops)
 
-        # remember best prec@1 and save checkpoint
-        is_best = prec1 > best_prec1
-        best_prec1 = max(prec1, best_prec1)
-        if args.ISDA:
-            save_checkpoint({
-                'epoch': epoch + 1,
-                'state_dict': model.state_dict(),
-                'fc': fc.state_dict(),
-                'best_acc': best_prec1,
-                'optimizer': optimizer.state_dict(),
-                'isda_criterion': isda_criterion,
-            }, is_best, checkpoint=exp.save_dir)
-        else:
-            save_checkpoint({
-                'epoch': epoch + 1,
-                'state_dict': model.state_dict(),
-                'fc': fc.state_dict(),
-                'best_acc': best_prec1,
-                'optimizer': optimizer.state_dict(),
-            }, is_best, checkpoint=exp.save_dir)
-        print('Best accuracy: ', best_prec1)
+            # remember best prec@1 and save checkpoint
+            is_best = prec1 > best_prec1
+            best_prec1 = max(prec1, best_prec1)
+            if args.ISDA:
+                save_checkpoint({
+                    'epoch': epoch + 1,
+                    'state_dict': model.state_dict(),
+                    'fc': fc.state_dict(),
+                    'best_acc': best_prec1,
+                    'optimizer': optimizer.state_dict(),
+                    'isda_criterion': isda_criterion,
+                }, is_best, checkpoint=exp.save_dir)
+            else:
+                save_checkpoint({
+                    'epoch': epoch + 1,
+                    'state_dict': model.state_dict(),
+                    'fc': fc.state_dict(),
+                    'best_acc': best_prec1,
+                    'optimizer': optimizer.state_dict(),
+                }, is_best, checkpoint=exp.save_dir)
+            print('Best accuracy: ', best_prec1)
 
-        exp.write(epoch, eval_metrics, train_metrics,
-                    epoch_time=f'{(time.time() - start_time) / 60:.1f}', lr=optimizer.param_groups[0]['lr'])
+            exp.write(epoch, eval_metrics, train_metrics,
+                        epoch_time=f'{(time.time() - start_time) / 60:.1f}', lr=optimizer.param_groups[0]['lr'])
     exp.finish()
 
 def train(train_loader, model, fc, criterion, optimizer, epoch, args):
@@ -616,6 +624,56 @@ def validate(val_loader, model, fc, criterion, epoch, Ncrop=False):
         loss=losses, top1=top1))
     exp.log(string)
     return OrderedDict(loss=losses.ave, top1=top1.ave), top1.ave
+
+def test_metric(val_loader, model, fc, criterion, Ncrop=False):
+    losses = AverageMeter()
+    top1 = AverageMeter()
+
+    # switch to evaluate mode
+    model.eval()
+    fc.eval()
+    y_pred = torch.tensor([]).cpu()
+    y_gt = torch.tensor([]).cpu()
+    for i, (input, target) in enumerate(val_loader):
+        target = target.cuda()
+        input = input.cuda()
+        if Ncrop:
+            bs, ncrops, c, h, w = input.shape
+            input = input.view(-1, c, h, w)
+            
+            input_var = torch.autograd.Variable(input)
+            target_var = torch.autograd.Variable(target)
+
+            with torch.no_grad():
+                features = model(input_var)
+                output = fc(features)
+                output = output.view(bs, ncrops, -1)
+                output = torch.sum(output, dim=1)/ncrops
+        else:
+            input_var = torch.autograd.Variable(input)
+            target_var = torch.autograd.Variable(target)
+
+            with torch.no_grad():
+                features = model(input_var)
+                output = fc(features)
+            
+        loss = criterion(output, target_var)
+
+        # measure accuracy and record loss
+        prec1 = accuracy(output.data, target, topk=(1,))[0]
+        losses.update(loss.data.item(), input.size(0))
+        top1.update(prec1.item(), input.size(0))
+        y_pred = torch.cat((y_pred, output.topk(1, 1, True, True)[1].cpu()),dim=0)
+        y_gt = torch.cat((y_gt, target_var.cpu()), dim = 0)
+    print("Accuracy: %2.6f %%" % top1.value)
+    print("Loss: %2.6f" % loss.value)
+    print("ACC:", accuracy_score(y_gt, y_pred))
+    print("BER:", 1 - balanced_accuracy_score(y_true=y_gt, y_pred=y_pred))
+    print("Sensitivity:", recall_score(y_gt, y_pred, average='micro'))
+    print("Precision: %2.6f" % precision_score(y_gt, y_pred, average='micro'))
+    print("Recall: %2.6f" % recall_score(y_gt, y_pred, average='micro'))
+    print("F1 Score: %2.6f" % f1_score(y_gt, y_pred, average='micro'))
+    print("Confusion Matrix:\n", confusion_matrix(y_gt, y_pred), '\n')
 
 class Full_layer(torch.nn.Module):
     '''explicitly define the full connected layer'''
