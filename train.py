@@ -479,7 +479,7 @@ def main():
         
     if args.test_metric:
         assert args.resume is not None
-        test_metric(val_loader, model, fc, ce_criterion, Ncrop=False)
+        test_metric(val_loader, model, fc, ce_criterion, Ncrop=args.Ncrops)
     else:
         for epoch in range(start_epoch, training_configurations[args.model]['epochs']):
             start_time = time.time()
@@ -665,8 +665,8 @@ def test_metric(val_loader, model, fc, criterion, Ncrop=False):
         top1.update(prec1.item(), input.size(0))
         y_pred = torch.cat((y_pred, output.topk(1, 1, True, True)[1].cpu()),dim=0)
         y_gt = torch.cat((y_gt, target_var.cpu()), dim = 0)
-    print("Accuracy: %2.6f %%" % top1.value)
-    print("Loss: %2.6f" % loss.value)
+    print("Accuracy: %2.6f %%" % top1.ave)
+    print("Loss: %2.6f" % losses.ave)
     print("ACC:", accuracy_score(y_gt, y_pred))
     print("BER:", 1 - balanced_accuracy_score(y_true=y_gt, y_pred=y_pred))
     print("Sensitivity:", recall_score(y_gt, y_pred, average='micro'))
